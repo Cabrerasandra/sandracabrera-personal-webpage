@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Webpage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .profile-pic {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out;
+            filter: grayscale(100%);
+        }
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+<body class="bg-teal-50 text-gray-800">
+    <!-- Main content container -->
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+
+        <!-- Language Toggle -->
+        <div class="flex justify-end mb-4">
+            <div class="flex rounded-full bg-teal-100 p-1 shadow-inner">
+                <button id="lang-en-btn" class="px-3 py-1 text-xs font-semibold rounded-full bg-teal-700 text-white transition-colors duration-200">
+                    EN
+                </button>
+                <button id="lang-es-btn" class="px-3 py-1 text-xs font-semibold rounded-full text-teal-700 hover:bg-teal-200 transition-colors duration-200">
+                    ES
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <nav class="flex justify-center md:justify-start space-x-2 sm:space-x-4 mb-8 border-b border-gray-200" id="tab-nav">
+            <button class="tab-button px-4 py-2 text-xl font-medium rounded-t-lg transition-colors duration-200 focus:outline-none focus:text-teal-700 flex items-center" data-tab="home">
+                <i class="fas fa-home mr-2"></i><span class="lang-en">Home</span><span class="lang-es hidden">Inicio</span>
+            </button>
+            <button class="tab-button px-4 py-2 text-xl font-medium rounded-t-lg transition-colors duration-200 focus:outline-none focus:text-teal-700 flex items-center" data-tab="about">
+                <i class="fas fa-user mr-2"></i><span class="lang-en">About Me</span><span class="lang-es hidden">Acerca de Mí</span>
+            </button>
+            <button class="tab-button px-4 py-2 text-xl font-medium rounded-t-lg transition-colors duration-200 focus:outline-none focus:text-teal-700 flex items-center" data-tab="career">
+                <i class="fas fa-briefcase mr-2"></i><span class="lang-en">Career</span><span class="lang-es hidden">Trayectoria</span>
+            </button>
+            <button class="tab-button px-4 py-2 text-xl font-medium rounded-t-lg transition-colors duration-200 focus:outline-none focus:text-teal-700 flex items-center" data-tab="passions">
+                <i class="fas fa-heart mr-2"></i><span class="lang-en">Passions</span><span class="lang-es hidden">Pasiones</span>
+            </button>
+            <button class="tab-button px-4 py-2 text-xl font-medium rounded-t-lg transition-colors duration-200 focus:outline-none focus:text-teal-700 flex items-center" data-tab="contact">
+                <i class="fas fa-envelope mr-2"></i><span class="lang-en">Contact</span><span class="lang-es hidden">Contacto</span>
+            </button>
+        </nav>
+
+        <!-- Tab Contents -->
+        <div class="tab-content-container">
+            <!-- Home Section -->
+            <div id="home" class="tab-content active text-center py-8">
+                <img src="https://storage.googleapis.com/gimini-data-us-central1/acb2a8bf-0aca-4537-94d2-dfb7d3879de2" alt="Profile picture of Sandra Cabrera" class="profile-pic w-40 h-40 rounded-full mx-auto mb-6 shadow-md">
+                
+                <div class="lang-en">
+                    <h2 class="text-2xl font-bold mt-4 mb-8">Sandra Cabrera</h2>
+                    <h1 class="text-xl font-bold text-gray-900 leading-tight mb-3">
+                        Banking Professional · Animal Advocate · Meditation Enthusiast
+                    </h1>
+                    <p class="text-base text-gray-600 max-w-2xl mx-auto mb-6">
+                        Welcome! An Ecuadorian-born professional who built a career in banking while following my heart for animals, family, and culture. My journey is about balance — between ambition and compassion, work and service, heritage and new opportunities.
+                    </p>
+                </div>
+                
+                <div class="lang-es hidden">
+                    <h2 class="text-2xl font-bold mt-4 mb-8">Sandra Cabrera</h2>
+                    <h1 class="text-xl font-bold text-gray-900 leading-tight mb-3">
+                        Profesional Bancaria · Defensora de Animales · Entusiasta de la Meditación
+                    </h1>
+                    <p class="text-base text-gray-600 max-w-2xl mx-auto mb-6">
+                        ¡Bienvenidos! Una profesional nacida en Ecuador que construyó una carrera en la banca mientras seguía su corazón por los animales, la familia y la cultura. Mi viaje se trata de equilibrio: entre ambición y compasión, trabajo y servicio, herencia y nuevas oportunidades.
+                    </p>
+                </div>
+            </div>
+
+            <!-- About Me Section -->
+            <div id="about" class="tab-content py-8">
+                <div class="lang-en">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">About Me</h2>
+                    <p class="text-base text-gray-800 mb-4 leading-relaxed">
+                        I’m originally from Ecuador, where I learned the values of family, perseverance, and community. My Ecuadorian roots inspire me to volunteer at cultural events, celebrate traditions, and stay connected to my heritage.
+                    </p>
+                    <p class="text-base text-gray-800 leading-relaxed">
+                        Today, I continue to grow in my career while dedicating time to the things that bring me joy: meditation, animals, and giving back to others.
+                    </p>
+                </div>
+
+                <div class="lang-es hidden">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Acerca de Mí</h2>
+                    <p class="text-base text-gray-800 mb-4 leading-relaxed">
+                        Soy originaria de Ecuador, donde aprendí los valores de la familia, la perseverancia y la comunidad. Mis raíces ecuatorianas me inspiran a ser voluntaria en eventos culturales, celebrar tradiciones y mantenerme conectada con mi herencia.
+                    </p>
+                    <p class="text-base text-gray-800 leading-relaxed">
+                        Hoy, continúo creciendo en mi carrera mientras dedico tiempo a las cosas que me traen alegría: la meditación, los animales y ayudar a los demás.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Career Section -->
+            <div id="career" class="tab-content py-8">
+                <div class="lang-en">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Career</h2>
+                    <p class="text-base text-gray-800 mb-4 leading-relaxed">
+                        My professional journey in banking has been defined by growth, leadership, and a drive to make an impact. I started as a Teller and worked my way up, learning the importance of dedication, teamwork, and delivering results at every stage.
+                    </p>
+                    <p class="text-base text-gray-800 mb-4 leading-relaxed">
+                        Over the years, I’ve had the opportunity to lead high-performing teams, mentor colleagues, and shape operational excellence across the district. Some highlights include:
+                    </p>
+                    <ul class="list-disc list-outside space-y-2 pl-4 text-base text-gray-800">
+                        <li><strong class="font-semibold">Talent Recruitment:</strong> Bringing in top talent to strengthen district teams.</li>
+                        <li><strong class="font-semibold">Customer Service Excellence:</strong> Achieving the highest customer service scores in the district.</li>
+                        <li><strong class="font-semibold">Audit Success:</strong> Leading branches that passed audits with distinction.</li>
+                        <li><strong class="font-semibold">Leadership Development:</strong> Building a leaders’ team to expand knowledge and performance across branches.</li>
+                        <li><strong class="font-semibold">Career Growth:</strong> Advanced from Teller → Banker → Loan Officer → Senior Manager, recognized for initiative and results.</li>
+                    </ul>
+                    <p class="text-base text-gray-800 mt-4 leading-relaxed">
+                        I continue to bring the same passion and commitment to every role, applying my skills to lead, mentor, and create meaningful impact wherever I work.
+                    </p>
+                </div>
+
+                <div class="lang-es hidden">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Trayectoria</h2>
+                    <p class="text-base text-gray-800 mb-4 leading-relaxed">
+                        Mi trayectoria profesional en la banca se ha definido por el crecimiento, el liderazgo y el impulso de generar un impacto. Comencé como cajera y ascendí, aprendiendo la importancia de la dedicación, el trabajo en equipo y la entrega de resultados en cada etapa.
+                    </p>
+                    <p class="text-base text-gray-800 mb-4 leading-relaxed">
+                        A lo largo de los años, he tenido la oportunidad de liderar equipos de alto rendimiento, guiar a colegas y dar forma a la excelencia operativa en todo el distrito. Algunos puntos destacados incluyen:
+                    </p>
+                    <ul class="list-disc list-outside space-y-2 pl-4 text-base text-gray-800">
+                        <li><strong class="font-semibold">Reclutamiento de Talento:</strong> Traer talentos de primer nivel para fortalecer los equipos del distrito.</li>
+                        <li><strong class="font-semibold">Excelencia en Servicio al Cliente:</strong> Alcanzar los puntajes más altos de servicio al cliente en el distrito.</li>
+                        <li><strong class="font-semibold">Éxito en Auditorías:</strong> Liderar sucursales que pasaron auditorías con distinción.</li>
+                        <li><strong class="font-semibold">Desarrollo de Liderazgo:</strong> Construir un equipo de líderes para expandir el conocimiento y el rendimiento en todas las sucursales.</li>
+                        <li><strong class="font-semibold">Crecimiento Profesional:</strong> Avance de Cajera → Banquera → Oficial de Préstamos → Gerente Senior, reconocida por iniciativa y resultados.</li>
+                    </ul>
+                    <p class="text-base text-gray-800 mt-4 leading-relaxed">
+                        Continúo aportando la misma pasión y compromiso a cada rol, aplicando mis habilidades para liderar, guiar y crear un impacto significativo dondequiera que trabaje.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Passions Section -->
+            <div id="passions" class="tab-content py-8">
+                <div class="lang-en">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6">Passions</h2>
+                    <div class="space-y-10">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mb-2">
+                                <span class="text-2xl mr-3">🧘</span> Meditation & Wellness
+                            </h3>
+                            <p class="text-base text-gray-800 leading-relaxed">
+                                Meditation is my anchor. It helps me stay balanced, present, and centered. I enjoy sharing simple practices that bring peace and clarity to everyday life.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mb-2">
+                                <span class="text-2xl mr-3">🐾</span> Animal Rescue & Advocacy
+                            </h3>
+                            <p class="text-base text-gray-800 leading-relaxed">
+                                I volunteer and rescue animals, offering pets in need a second chance at a happy home filled with care and love. I provide food, medical care, and comfort until they’re ready for adoption. You can help too — join me in giving these animals the care they deserve.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mb-2">
+                                <span class="text-2xl mr-3">🌎</span> Culture & Community
+                            </h3>
+                            <p class="text-base text-gray-800 leading-relaxed">
+                                My Ecuadorian roots are an important part of who I am. I volunteer at cultural events to celebrate traditions, share community spirit, and stay connected to my heritage. It’s a way of giving back while honoring where I come from.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lang-es hidden">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6">Pasiones</h2>
+                    <div class="space-y-10">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mb-2">
+                                <span class="text-2xl mr-3">🧘</span> Meditación y Bienestar
+                            </h3>
+                            <p class="text-base text-gray-800 leading-relaxed">
+                                La meditación es mi ancla. Me ayuda a mantenerme equilibrada, presente y centrada. Disfruto compartiendo prácticas sencillas que aportan paz y claridad a la vida diaria.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mb-2">
+                            <span class="text-2xl mr-3">🐾</span> Rescate y Defensa Animal
+                            </h3>
+                            <p class="text-base text-gray-800 leading-relaxed">
+                                I volunteer and rescue animals, offering pets in need a second chance at a happy home filled with care and love. I provide food, medical care, and comfort until they’re ready for adoption. You can help too — join me in giving these animals the care they deserve.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 flex items-center mb-2">
+                                <span class="text-2xl mr-3">🌎</span> Cultura y Comunidad
+                            </h3>
+                            <p class="text-base text-gray-800 leading-relaxed">
+                                My Ecuadorian roots are an important part of who I am. I volunteer at cultural events to celebrate traditions, share community spirit, and stay connected to my heritage. It’s a way of giving back while honoring where I come from.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contact" class="tab-content text-center py-8">
+                <div class="lang-en">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Contact</h2>
+                    <p class="text-base text-gray-800 max-w-2xl mx-auto mb-4">
+                        I’d love to connect! Whether you’d like to collaborate, volunteer at the shelter, or simply share a story, feel free to reach out.
+                    </p>
+                    <a href="mailto:saya151981@gmail.com" class="inline-block bg-teal-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-teal-800 transition-colors duration-300">
+                        Let's Connect →
+                    </a>
+                    <p class="mt-2 text-base text-gray-600">
+                        saya151981@gmail.com
+                    </p>
+                </div>
+
+                <div class="lang-es hidden">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Contacto</h2>
+                    <p class="text-base text-gray-800 max-w-2xl mx-auto mb-4">
+                        ¡Me encantaría conectar! Ya sea que te gustaría colaborar, ser voluntario en el refugio, o simplemente compartir una historia, no dudes en comunicarte.
+                    </p>
+                    <a href="mailto:saya151981@gmail.com" class="inline-block bg-teal-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-teal-800 transition-colors duration-300">
+                        Conectemos →
+                    </a>
+                    <p class="mt-2 text-base text-gray-600">
+                        saya151981@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+            const langEnBtn = document.getElementById('lang-en-btn');
+            const langEsBtn = document.getElementById('lang-es-btn');
+
+            const activateTab = (tabId) => {
+                tabs.forEach(tab => {
+                    tab.classList.remove('text-teal-700', 'border-b-2', 'border-teal-700');
+                });
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                const selectedTab = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+                const selectedContent = document.getElementById(tabId);
+                
+                if (selectedTab) {
+                    selectedTab.classList.add('text-teal-700', 'border-b-2', 'border-teal-700');
+                }
+                if (selectedContent) {
+                    selectedContent.classList.add('active');
+                }
+            };
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    activateTab(tabId);
+                });
+            });
+
+            const switchLanguage = (isEnglish) => {
+                const langEnElements = document.querySelectorAll('.lang-en');
+                const langEsElements = document.querySelectorAll('.lang-es');
+
+                langEnElements.forEach(el => el.classList.toggle('hidden', !isEnglish));
+                langEsElements.forEach(el => el.classList.toggle('hidden', isEnglish));
+                
+                if (isEnglish) {
+                    langEnBtn.classList.add('bg-teal-700', 'text-white');
+                    langEsBtn.classList.remove('bg-teal-700', 'text-white');
+                    langEsBtn.classList.add('hover:bg-teal-200');
+                } else {
+                    langEsBtn.classList.add('bg-teal-700', 'text-white');
+                    langEnBtn.classList.remove('bg-teal-700', 'text-white');
+                    langEnBtn.classList.add('hover:bg-teal-200');
+                }
+            };
+
+            langEnBtn.addEventListener('click', () => switchLanguage(true));
+            langEsBtn.addEventListener('click', () => switchLanguage(false));
+            
+            // Set initial active tab and language
+            activateTab('home');
+            switchLanguage(true);
+        });
+    </script>
+</body>
+</html>
